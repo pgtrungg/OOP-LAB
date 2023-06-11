@@ -10,28 +10,46 @@ public class DVD extends Disc implements Playable {
     int length;
     public DVD(String title)
     {
-        super(title);
+        this.title = title;
         nbDigitalVideoDiscs++;
     }
 
     public DVD(String title, String category, float cost) {
-        super(title,category,cost);
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
         nbDigitalVideoDiscs++;
     }
 
     public DVD(String title, String category, String director, float cost) {
-        super(title,category,director,cost);
+        this.title = title;
+        this.category = category;
+        this.director = director;
+        this.cost = cost;
         nbDigitalVideoDiscs++;
     }
     public DVD(String title,String category,String director,int length,float cost){
-        super(title,category,director,length,cost);
+        super();
+        this.title=title;
+        this.category=category;
+        this.director=director;
+        this.length=length;
+        this.cost=cost;
         nbDigitalVideoDiscs++;
     }
     public DVD(int id,String title,String category,String director,int length,float cost) {
-        super(id,title,category,director,length,cost);
+        this.id=id;
+        this.title = title;
+        this.category = category;
+        this.director = director;
+        this.length = length;
+        this.cost = cost;
         nbDigitalVideoDiscs++;
     }
 
+    public DVD() {
+
+    }
     public String getDirector() {
         return this.director;
     }
@@ -54,14 +72,13 @@ public class DVD extends Disc implements Playable {
     public static void setNbDigitalVideoDiscs(int nbDigitalVideoDiscs) {
         DVD.nbDigitalVideoDiscs = nbDigitalVideoDiscs;
     }
-
     public void play(){
-        System.out.println("Id:"+this.getId());
-        System.out.println("Title:"+this.getTitle());
-        System.out.println("Category:"+this.getCategory());
-        System.out.println("Director:"+this.getDirector());
-        System.out.println("Length:"+this.getLength());
-        System.out.println("Cost:"+this.getCost());
+        System.out.println("Playing DVD: "+this.getTitle());
+        System.out.println("DVD length: "+this.getLength());
 
+    }
+    @Override
+    public String toString() {
+        return "DVD - "+this.getId()+" - "+this.getTitle()+" - "+this.getCategory()+" - "+this.getDirector()+" - "+this.getLength()+" - "+this.getCost();
     }
 }

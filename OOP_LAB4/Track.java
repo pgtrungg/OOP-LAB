@@ -11,12 +11,25 @@ public class Track implements Playable {
     public int getLength() {
         return length;
     }
-    Track(String title,int length){
+    public  Track(String title,int length){
         this.title=title;
         this.length=length;
     }
     public void play(){
-        System.out.println("Title:"+this.getTitle());
-        System.out.println("Length:"+this.getLength());
+        System.out.println(getTitle()+" - "+getLength());
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+        Track track = (Track) o;
+        return length == track.length;
     }
 }

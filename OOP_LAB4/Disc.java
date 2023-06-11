@@ -11,18 +11,21 @@ public class Disc extends Media {
     }
 
     public Disc(String title, String category, float cost) {
+        super();
         this.title = title;
         this.category = category;
         this.cost = cost;
     }
 
     public Disc(String title, String category, String director, float cost) {
+        super();
         this.title = title;
         this.category = category;
         this.director = director;
         this.cost = cost;
     }
     public Disc(String title,String category,String director,int length,float cost){
+        super();
         this.title=title;
         this.category=category;
         this.director=director;
@@ -30,6 +33,7 @@ public class Disc extends Media {
         this.cost=cost;
     }
     public Disc(int id,String title,String category,String director,int length,float cost) {
+        super();
         this.id=id;
         this.title = title;
         this.category = category;
@@ -49,4 +53,5 @@ public class Disc extends Media {
     public String getDirector() {
         return director;
     }
+
 }
